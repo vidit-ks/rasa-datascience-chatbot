@@ -1,101 +1,108 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
-    - hey
-    - hello
     - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
+    - hello
     - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+    - hey!
+
+- intent: ask_course_info
+  examples: |
+    - What is the data science course about?
+    - Tell me about your Data Science & ML program
+    - Can you explain the data science course syllabus?
+    - I'd like course details
+
+- intent: ask_duration
+  examples: |
+    - How long is the [data science](course) bootcamp?
+    - Duration of data science & AI course?
+    - How many weeks does the DS course run?
+    - What’s the length of the DS program?
+
+- intent: ask_fees
+  examples: |
+    - How much does the [data science](course) course cost?
+    - What’s the total fee for data science?
+    - Tell me the price of your DS bootcamp
+
+- intent: ask_eligibility
+  examples: |
+    - Am I eligible for the data science course?
+    - Eligibility criteria?
+    - Which background is required to join DS?
+
+- intent: ask_admission_process
+  examples: |
+    - How can I apply?
+    - Tell me the admission process
+    - What are the steps to enroll?
+
+- intent: ask_placement
+  examples: |
+    - Do you offer placement assistance?
+    - What are placement opportunities?
+    - Will I get job support?
+
+- intent: ask_prerequisite
+  examples: |
+    - Do I need programming experience?
+    - Are prerequisites required?
+    - Should I know Python beforehand?
+
+- intent: ask_contact
+  examples: |
+    - Can I talk to a counsellor?
+    - What’s the contact number?
+    - Provide email address
 
 - intent: goodbye
   examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
     - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+    - bye
+    - speak later
+    - see ya
 
-- intent: affirm
+- intent: thankyou
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
+    - Thanks!
+    - Thank you so much
+    - Cheers
 
-- intent: deny
+- intent: ask_start_date
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+    - When does the next batch of data science start?
+    - What is the start date for the January 2026 batch?
+    - Tell me the upcoming start dates.
+    - I want to join next month.
 
-- intent: mood_great
+- intent: ask_mode
   examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+    - Do you offer an [online](mode) data science course?
+    - Are classes in-person or blended?
+    - I prefer online mode — is that possible?
 
-- intent: mood_unhappy
+- intent: ask_scholarship
   examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+    - Are there any scholarships available?
+    - Do you offer early-bird discounts?
+    - I’m looking for scholarship options.
 
-- intent: bot_challenge
+- intent: ask_topics
   examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
+    - What does the curriculum include?
+    - Tell me about ML and NLP topics.
+    - Do you teach deep learning?
 
-- intent: advice
-  examples: | 
-    - what should I do?
-    - Help!
-    - what's next?
-    - help me!
-    - it's urgent
+- intent: ask_budget
+  examples: |
+    - My budget is ₹30k — what can I do?
+    - I can spend up to ₹40,000 — any course?
+    - I have a tight budget — do you have cheaper options?
 
-    
+- intent: ask_practice
+  examples: |
+    - Does the course include hands-on coding?
+    - Will I get real-world projects?
+    - I want practical assignments.

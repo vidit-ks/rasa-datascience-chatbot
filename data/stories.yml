@@ -1,30 +1,57 @@
 version: "3.1"
-
 stories:
 
-- story: happy path
+- story: Course Info Flow
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_course_info
+    - action: utter_course_info
+    - intent: ask_duration
+    - action: utter_duration
+    - intent: ask_topics
+    - action: action_show_course_topics
+    - intent: ask_fees
+    - action: action_provide_course_fee
+    - intent: thankyou
+    - action: utter_thankyou
+    - intent: goodbye
+    - action: utter_goodbye
 
-- story: sad path 1
+- story: Admission Flow
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+    - intent: ask_admission_process
+    - action: action_provide_admission_link
+    - intent: ask_eligibility
+    - action: utter_eligibility
+    - intent: ask_prerequisite
+    - action: utter_prerequisite
+    - intent: thankyou
+    - action: utter_thankyou
+    - intent: goodbye
+    - action: utter_goodbye
 
-- story: sad path 2
+- story: Scholarship Inquiry
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_advice
+    - intent: ask_scholarship
+    - action: action_scholarship_info
+    - intent: ask_budget
+    - action: action_course_recommendation_by_budget
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: Practice & Projects Info
+  steps:
+    - intent: ask_practice
+    - action: action_course_practice
+    - intent: thankyou
+    - action: utter_thankyou
+
+- story: Mode of Course
+  steps:
+    - intent: ask_mode
+    - action: action_course_mode
+    - intent: ask_start_date
+    - action: action_list_upcoming_batches
+    - intent: goodbye
+    - action: utter_goodbye

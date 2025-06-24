@@ -1,14 +1,87 @@
 version: "3.1"
-
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
+- rule: Greet
   steps:
-  - intent: goodbye
-  - action: utter_goodbye
-  
+    - intent: greet
+    - action: utter_greet
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Goodbye
   steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Thank you
+  steps:
+    - intent: thankyou
+    - action: utter_thankyou
+
+- rule: Ask course info
+  steps:
+    - intent: ask_course_info
+    - action: utter_course_info
+
+- rule: Ask duration
+  steps:
+    - intent: ask_duration
+    - action: utter_duration
+
+- rule: Ask fees
+  steps:
+    - intent: ask_fees
+    - action: action_provide_course_fee
+
+- rule: Ask eligibility
+  steps:
+    - intent: ask_eligibility
+    - action: utter_eligibility
+
+- rule: Ask admission process
+  steps:
+    - intent: ask_admission_process
+    - action: action_provide_admission_link
+
+- rule: Ask prerequisites
+  steps:
+    - intent: ask_prerequisite
+    - action: utter_prerequisite
+
+- rule: Ask placement
+  steps:
+    - intent: ask_placement
+    - action: utter_placement
+
+- rule: Ask contact
+  steps:
+    - intent: ask_contact
+    - action: utter_contact
+
+- rule: Ask start date
+  steps:
+    - intent: ask_start_date
+    - action: action_list_upcoming_batches
+
+- rule: Ask mode
+  steps:
+    - intent: ask_mode
+    - action: action_course_mode
+
+- rule: Ask scholarship
+  steps:
+    - intent: ask_scholarship
+    - action: action_scholarship_info
+
+- rule: Ask topics
+  steps:
+    - intent: ask_topics
+    - action: action_show_course_topics
+
+- rule: Ask budget
+  steps:
+    - intent: ask_budget
+    - action: action_course_recommendation_by_budget
+
+- rule: Ask practice
+  steps:
+    - intent: ask_practice
+    - action: action_course_practice
