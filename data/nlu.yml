@@ -13,25 +13,44 @@ nlu:
     - Tell me about your Data Science & ML program
     - Can you explain the data science course syllabus?
     - I'd like course details
+    - What topics are covered in the course?
+    - What does the data science program include?
+    - What will I learn in this course?
+
 
 - intent: ask_duration
   examples: |
     - How long is the [data science](course) bootcamp?
+    - How long is the [DS](course) program?
+    - When does the [AI Bootcamp](course) start?
+    - How long is the [data science and ML](course) course?
     - Duration of data science & AI course?
     - How many weeks does the DS course run?
     - What’s the length of the DS program?
+    - How long does the course last?
+    - What is the total duration?
+    - How many months is the course?
 
 - intent: ask_fees
   examples: |
     - How much does the [data science](course) course cost?
     - What’s the total fee for data science?
     - Tell me the price of your DS bootcamp
+    - What is the total fee?
+    - How much do I have to pay?
+    - What are the charges for this course?
+
 
 - intent: ask_eligibility
   examples: |
     - Am I eligible for the data science course?
     - Eligibility criteria?
     - Which background is required to join DS?
+    - Who can apply?
+    - What qualification is required?
+    - Do I need a tech background?
+
+
 
 - intent: ask_admission_process
   examples: |
@@ -82,6 +101,11 @@ nlu:
     - Do you offer an [online](mode) data science course?
     - Are classes in-person or blended?
     - I prefer online mode — is that possible?
+    - Is it online?
+    - Can I take it offline?
+    - Do you offer hybrid classes?
+    - Is the course available remotely?
+
 
 - intent: ask_scholarship
   examples: |
@@ -100,9 +124,51 @@ nlu:
     - My budget is ₹30k — what can I do?
     - I can spend up to ₹40,000 — any course?
     - I have a tight budget — do you have cheaper options?
+    - ₹40000
+    - 30000
+    - I have ₹35,000
+    - I can pay 30k max
+
 
 - intent: ask_practice
   examples: |
     - Does the course include hands-on coding?
     - Will I get real-world projects?
     - I want practical assignments.
+
+- intent: affirm
+  examples: |
+    - yes
+    - yeah
+    - sure
+    - absolutely
+    - definitely
+    - of course
+    - please do
+    - okay
+    - alright
+    - yess
+    - I do
+    - I would
+    - I want to
+    - sounds good
+    - go ahead
+    - okay show me
+    - yes please
+    - why not
+    - obviously
+    - I guess so
+    - yup
+    - that's right
+    - correct
+    - cool
+
+- intent: deny
+  examples: |
+    - no
+    - nope
+    - not now
+    - maybe later
+    - I don’t want that
+    - not interested
+

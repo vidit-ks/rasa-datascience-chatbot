@@ -8,7 +8,7 @@ stories:
     - intent: ask_course_info
     - action: utter_course_info
     - intent: ask_duration
-    - action: utter_duration
+    - action: action_course_duration
     - intent: ask_topics
     - action: action_show_course_topics
     - intent: ask_fees
@@ -54,4 +54,33 @@ stories:
     - intent: ask_start_date
     - action: action_list_upcoming_batches
     - intent: goodbye
+    - action: utter_goodbye
+
+
+- story: Respond with batch dates after user asks duration
+  steps:
+    - intent: ask_duration
+    - action: action_course_duration
+    - intent: affirm
+    - action: action_list_upcoming_batches
+
+- story: User denies batch dates after duration
+  steps:
+    - intent: ask_duration
+    - action: action_course_duration
+    - intent: deny
+    - action: utter_goodbye
+
+- story: User interested in scholarship after fees
+  steps:
+    - intent: ask_fees
+    - action: action_provide_course_fee
+    - intent: affirm
+    - action: action_scholarship_info
+
+- story: User denies recommendation
+  steps:
+    - intent: ask_budget
+    - action: action_course_recommendation_by_budget
+    - intent: deny
     - action: utter_goodbye

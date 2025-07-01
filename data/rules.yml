@@ -21,11 +21,6 @@ rules:
     - intent: ask_course_info
     - action: utter_course_info
 
-- rule: Ask duration
-  steps:
-    - intent: ask_duration
-    - action: utter_duration
-
 - rule: Ask fees
   steps:
     - intent: ask_fees
@@ -85,3 +80,9 @@ rules:
   steps:
     - intent: ask_practice
     - action: action_course_practice
+
+- rule: Respond to course duration
+  steps:
+    - intent: ask_duration
+    - action: action_course_duration
+

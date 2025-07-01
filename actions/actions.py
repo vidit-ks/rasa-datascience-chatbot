@@ -143,3 +143,37 @@ class ActionProvideAdmissionLink(Action):
         
         dispatcher.utter_message(text="Here is the admission form link: https://example.com/apply")
         return []
+
+
+class ActionCourseDuration(Action):
+    def name(self) -> Text:
+        return "action_course_duration"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        course = tracker.get_slot("course")
+        
+        # Fallback if user didn't mention a course name
+        if course is None:
+            course = "Data Science"
+
+        # Map duration based on course
+        durations = {
+            "data science": "12 weeks",
+            "DS": "12 weeks",
+            "AI": "14 weeks",
+            "ML": "10 weeks"
+        }
+
+        course = (tracker.get_slot("course") or "Data Science").lower()
+        duration = durations.get(course, "12 weeks")
+
+
+        dispatcher.utter_message(text=f"The {course.title()} course runs for around {duration}. Would you like to see upcoming batch dates?"
+        )
+
+
+        return [SlotSet("course", course.title()), SlotSet("duration", duration)]
+
