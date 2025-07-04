@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-course",
+      "2": "I-course",
+      "3": "L-course",
+      "4": "U-course",
+      "5": "B-course_level",
+      "6": "I-course_level",
+      "7": "L-course_level",
+      "8": "U-course_level",
+      "9": "B-mode",
+      "10": "I-mode",
+      "11": "L-mode",
+      "12": "U-mode",
+      "13": "B-problem_topic",
+      "14": "I-problem_topic",
+      "15": "L-problem_topic",
+      "16": "U-problem_topic",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-course": 1,
+      "I-course": 2,
+      "L-course": 3,
+      "U-course": 4,
+      "B-course_level": 5,
+      "I-course_level": 6,
+      "L-course_level": 7,
+      "U-course_level": 8,
+      "B-mode": 9,
+      "I-mode": 10,
+      "L-mode": 11,
+      "U-mode": 12,
+      "B-problem_topic": 13,
+      "I-problem_topic": 14,
+      "L-problem_topic": 15,
+      "U-problem_topic": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

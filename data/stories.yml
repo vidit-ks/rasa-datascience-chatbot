@@ -1,24 +1,29 @@
 version: "3.1"
+
 stories:
 
-- story: Course Info Flow
+- story: Full Course Inquiry Flow
   steps:
     - intent: greet
     - action: utter_greet
     - intent: ask_course_info
     - action: utter_course_info
-    - intent: ask_duration
-    - action: action_course_duration
     - intent: ask_topics
     - action: action_show_course_topics
+    - intent: ask_duration
+    - action: action_course_duration
+    - intent: ask_start_date
+    - action: action_list_upcoming_batches
     - intent: ask_fees
     - action: action_provide_course_fee
+    - intent: ask_scholarship
+    - action: action_scholarship_info
     - intent: thankyou
     - action: utter_thankyou
     - intent: goodbye
     - action: utter_goodbye
 
-- story: Admission Flow
+- story: Admission Help Flow
   steps:
     - intent: ask_admission_process
     - action: action_provide_admission_link
@@ -26,61 +31,64 @@ stories:
     - action: utter_eligibility
     - intent: ask_prerequisite
     - action: utter_prerequisite
+    - intent: ask_contact
+    - action: utter_contact
     - intent: thankyou
     - action: utter_thankyou
     - intent: goodbye
     - action: utter_goodbye
 
-- story: Scholarship Inquiry
-  steps:
-    - intent: ask_scholarship
-    - action: action_scholarship_info
-    - intent: ask_budget
-    - action: action_course_recommendation_by_budget
-    - intent: goodbye
-    - action: utter_goodbye
-
-- story: Practice & Projects Info
+- story: Practice-Oriented Student
   steps:
     - intent: ask_practice
     - action: action_course_practice
+    - intent: ask_topics
+    - action: action_show_course_topics
     - intent: thankyou
     - action: utter_thankyou
 
-- story: Mode of Course
+- story: Mode and Batch Start Info
   steps:
     - intent: ask_mode
     - action: action_course_mode
     - intent: ask_start_date
     - action: action_list_upcoming_batches
+    - intent: ask_admission_process
+    - action: action_provide_admission_link
     - intent: goodbye
     - action: utter_goodbye
 
-
-- story: Respond with batch dates after user asks duration
-  steps:
-    - intent: ask_duration
-    - action: action_course_duration
-    - intent: affirm
-    - action: action_list_upcoming_batches
-
-- story: User denies batch dates after duration
-  steps:
-    - intent: ask_duration
-    - action: action_course_duration
-    - intent: deny
-    - action: utter_goodbye
-
-- story: User interested in scholarship after fees
-  steps:
-    - intent: ask_fees
-    - action: action_provide_course_fee
-    - intent: affirm
-    - action: action_scholarship_info
-
-- story: User denies recommendation
+- story: Budget-Based Recommendation
   steps:
     - intent: ask_budget
     - action: action_course_recommendation_by_budget
     - intent: deny
     - action: utter_goodbye
+
+- story: Fee then Scholarship Flow
+  steps:
+    - intent: ask_fees
+    - action: action_provide_course_fee
+    - intent: ask_scholarship
+    - action: action_scholarship_info
+
+- story: Placement and Support
+  steps:
+    - intent: ask_placement
+    - action: utter_placement
+    - intent: ask_contact
+    - action: utter_contact
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: Fee Inquiry with Course Level
+  steps:
+    - intent: ask_fees
+    - action: action_provide_course_fee
+    - intent: inform_course_level
+    - action: action_provide_course_fee
+
+- story: Mode inquiry flow
+  steps:
+    - intent: ask_mode
+    - action: action_course_mode

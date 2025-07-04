@@ -1,88 +1,125 @@
 version: "3.1"
+
 rules:
 
+# Basic conversational rules
 - rule: Greet
   steps:
     - intent: greet
     - action: utter_greet
 
-- rule: Goodbye
+- rule: Say goodbye
   steps:
     - intent: goodbye
     - action: utter_goodbye
 
-- rule: Thank you
+- rule: Thank user
   steps:
     - intent: thankyou
     - action: utter_thankyou
 
-- rule: Ask course info
+# Course-related queries
+- rule: Provide course info
   steps:
     - intent: ask_course_info
     - action: utter_course_info
 
-- rule: Ask fees
+- rule: Provide course duration
+  steps:
+    - intent: ask_duration
+    - action: action_course_duration
+
+- rule: Provide course fees
   steps:
     - intent: ask_fees
     - action: action_provide_course_fee
 
-- rule: Ask eligibility
+- rule: Ask for course level after fee
+  condition:
+    - slot_was_set:
+        - course_level: null
   steps:
-    - intent: ask_eligibility
-    - action: utter_eligibility
+    - intent: ask_fees
+    - action: action_provide_course_fee
 
-- rule: Ask admission process
+# Admission process and eligibility
+- rule: Admission process
   steps:
     - intent: ask_admission_process
     - action: action_provide_admission_link
 
-- rule: Ask prerequisites
+- rule: Share eligibility criteria
+  steps:
+    - intent: ask_eligibility
+    - action: utter_eligibility
+
+- rule: List prerequisites
   steps:
     - intent: ask_prerequisite
     - action: utter_prerequisite
 
-- rule: Ask placement
+# Placement and support
+- rule: Placement assistance
   steps:
     - intent: ask_placement
     - action: utter_placement
 
-- rule: Ask contact
+- rule: Provide contact information
   steps:
     - intent: ask_contact
     - action: utter_contact
 
-- rule: Ask start date
+# Batch and delivery mode
+- rule: Provide batch start dates
   steps:
     - intent: ask_start_date
     - action: action_list_upcoming_batches
 
-- rule: Ask mode
+- rule: Provide course delivery mode
   steps:
     - intent: ask_mode
     - action: action_course_mode
 
-- rule: Ask scholarship
-  steps:
-    - intent: ask_scholarship
-    - action: action_scholarship_info
-
-- rule: Ask topics
+# Topics and scholarships
+- rule: Provide course topics
   steps:
     - intent: ask_topics
     - action: action_show_course_topics
 
-- rule: Ask budget
+- rule: Provide scholarship details
+  steps:
+    - intent: ask_scholarship
+    - action: action_scholarship_info
+
+# Budget-specific recommendations
+- rule: Provide budget-based recommendation
   steps:
     - intent: ask_budget
     - action: action_course_recommendation_by_budget
 
-- rule: Ask practice
+# Project/Practice details
+- rule: Provide practice and project details
   steps:
     - intent: ask_practice
     - action: action_course_practice
 
-- rule: Respond to course duration
+# Follow-up exit if user says no
+- rule: Exit if user denies after offer
   steps:
-    - intent: ask_duration
-    - action: action_course_duration
+    - intent: deny
+    - action: utter_goodbye
+
+#beg/inter/adv
+- rule: Handle course level statement
+  steps:
+    - intent: inform_course_level
+    - action: action_provide_course_fee
+
+#provide mode
+- rule: Provide course mode
+  steps:
+    - intent: ask_mode
+    - action: action_course_mode
+
+
 

@@ -1,142 +1,154 @@
 version: "3.1"
 nlu:
+
 - intent: greet
   examples: |
     - hi
     - hello
     - hey there
+    - good morning
+    - hi bot
+    - yo
     - hey!
-
-- intent: ask_course_info
-  examples: |
-    - What is the data science course about?
-    - Tell me about your Data Science & ML program
-    - Can you explain the data science course syllabus?
-    - I'd like course details
-    - What topics are covered in the course?
-    - What does the data science program include?
-    - What will I learn in this course?
-
-
-- intent: ask_duration
-  examples: |
-    - How long is the [data science](course) bootcamp?
-    - How long is the [DS](course) program?
-    - When does the [AI Bootcamp](course) start?
-    - How long is the [data science and ML](course) course?
-    - Duration of data science & AI course?
-    - How many weeks does the DS course run?
-    - What’s the length of the DS program?
-    - How long does the course last?
-    - What is the total duration?
-    - How many months is the course?
-
-- intent: ask_fees
-  examples: |
-    - How much does the [data science](course) course cost?
-    - What’s the total fee for data science?
-    - Tell me the price of your DS bootcamp
-    - What is the total fee?
-    - How much do I have to pay?
-    - What are the charges for this course?
-
-
-- intent: ask_eligibility
-  examples: |
-    - Am I eligible for the data science course?
-    - Eligibility criteria?
-    - Which background is required to join DS?
-    - Who can apply?
-    - What qualification is required?
-    - Do I need a tech background?
-
-
-
-- intent: ask_admission_process
-  examples: |
-    - How can I apply?
-    - Tell me the admission process
-    - What are the steps to enroll?
-
-- intent: ask_placement
-  examples: |
-    - Do you offer placement assistance?
-    - What are placement opportunities?
-    - Will I get job support?
-
-- intent: ask_prerequisite
-  examples: |
-    - Do I need programming experience?
-    - Are prerequisites required?
-    - Should I know Python beforehand?
-
-- intent: ask_contact
-  examples: |
-    - Can I talk to a counsellor?
-    - What’s the contact number?
-    - Provide email address
 
 - intent: goodbye
   examples: |
     - goodbye
     - bye
-    - speak later
     - see ya
+    - talk to you later
+    - end chat
+    - exit
 
 - intent: thankyou
   examples: |
-    - Thanks!
-    - Thank you so much
-    - Cheers
+    - thanks
+    - thank you
+    - appreciate it
+    - cheers
+    - thank you so much
+    - nice, thanks
+
+- intent: ask_course_info
+  examples: |
+    - what is the [data science](course) course about
+    - tell me about your [machine learning](course) course
+    - what does [AI](course) program include
+    - what topics are covered in the [DS](course) course
+    - give me [data science](course) course details
+    - I want to know about [DS and ML](course)
+
+- intent: ask_duration
+  examples: |
+    - how long is the [data science](course) course
+    - what's the duration of [AI](course)
+    - duration of [ML](course)
+    - total time required for [ds](course)
+    - how many weeks is the [data science](course) bootcamp
+
+- intent: ask_fees
+  examples: |
+    - how much does the [data science](course) course cost
+    - what's the fee for [beginner](course_level)
+    - tell me about [intermediate](course_level) course fee
+    - I want the fee for [advanced](course_level)
+    - what is the price of [data science](course)
+    - is there any discount for [intermediate](course_level)
+
+- intent: ask_eligibility
+  examples: |
+    - am I eligible for the [data science](course) course
+    - who can apply for [AI](course)
+    - what background is required
+    - I'm from commerce, can I take this
+
+- intent: ask_admission_process
+  examples: |
+    - how can I apply
+    - tell me the admission process
+    - guide me through the enrollment
+    - is it online admission
+    - where can I fill the form
+
+- intent: ask_placement
+  examples: |
+    - do you offer placement assistance
+    - what are the placement opportunities
+    - will I get job support
+    - is job placement guaranteed
+
+- intent: ask_prerequisite
+  examples: |
+    - do I need programming experience
+    - is [Python](problem_topic) necessary
+    - any required background knowledge
+    - is this beginner-friendly
+
+- intent: ask_contact
+  examples: |
+    - what’s the contact number
+    - provide email address
+    - can someone call me
+    - help me contact support
 
 - intent: ask_start_date
   examples: |
-    - When does the next batch of data science start?
-    - What is the start date for the January 2026 batch?
-    - Tell me the upcoming start dates.
-    - I want to join next month.
+    - when does the next [data science](course) batch start
+    - start date for [AI](course)
+    - upcoming batch dates
+    - when can I start
 
 - intent: ask_mode
   examples: |
     - Do you offer an [online](mode) data science course?
+    - I prefer [online](mode) mode — is that possible?
+    - I want to take the course [offline](mode)
+    - Is [hybrid](mode) available?
+    - [online](mode)
+    - [offline](mode)
+    - [hybrid](mode)
+    - Can I attend remotely?
     - Are classes in-person or blended?
-    - I prefer online mode — is that possible?
-    - Is it online?
-    - Can I take it offline?
-    - Do you offer hybrid classes?
     - Is the course available remotely?
+    - Is it online?
 
 
 - intent: ask_scholarship
   examples: |
-    - Are there any scholarships available?
-    - Do you offer early-bird discounts?
-    - I’m looking for scholarship options.
+    - are there any scholarships
+    - do you offer early-bird discounts
+    - I want to apply for financial aid
+    - is any discount available
 
 - intent: ask_topics
   examples: |
-    - What does the curriculum include?
-    - Tell me about ML and NLP topics.
-    - Do you teach deep learning?
+    - what does the curriculum include
+    - tell me about [ML](course) and [NLP](course) topics
+    - do you teach [deep learning](course)
+    - show [data science](course) subjects
+
 
 - intent: ask_budget
   examples: |
-    - My budget is ₹30k — what can I do?
-    - I can spend up to ₹40,000 — any course?
-    - I have a tight budget — do you have cheaper options?
-    - ₹40000
-    - 30000
-    - I have ₹35,000
-    - I can pay 30k max
+    - my budget is [30000](budget)
+    - I can spend [40000](budget)
+    - I have [35000](budget)
+    - I can pay [30k](budget)
+    - [25k](budget)
+    - I can afford up to [₹40,000](budget)
+    - [₹30k](budget)
+    - [40k](budget)
 
 
 - intent: ask_practice
   examples: |
-    - Does the course include hands-on coding?
-    - Will I get real-world projects?
-    - I want practical assignments.
+    - does the course include hands-on coding
+    - will I get to build something
+    - are there mini projects
+    - will there be assignments
+    - is it theory or practical based
 
-- intent: affirm
+- intent: agree
   examples: |
     - yes
     - yeah
@@ -144,24 +156,11 @@ nlu:
     - absolutely
     - definitely
     - of course
-    - please do
-    - okay
-    - alright
-    - yess
-    - I do
-    - I would
-    - I want to
     - sounds good
-    - go ahead
-    - okay show me
-    - yes please
-    - why not
-    - obviously
-    - I guess so
     - yup
-    - that's right
-    - correct
-    - cool
+    - I would like that
+    - go ahead
+    - okay
 
 - intent: deny
   examples: |
@@ -169,6 +168,38 @@ nlu:
     - nope
     - not now
     - maybe later
-    - I don’t want that
     - not interested
+    - cancel that
+    - no thanks
 
+- intent: inform_course_level
+  examples: |
+    - [beginner](course_level)
+    - [intermediate](course_level)
+    - [advanced](course_level)
+    - I’m a [beginner](course_level)
+    - I want [intermediate](course_level)
+    - I'm at [advanced](course_level) level
+    - looking for [beginner](course_level) course
+    - show [advanced](course_level) course fee
+    - [intermediate](course_level) program fees
+
+
+
+
+- synonym: online
+  examples: |
+    - remote
+    - virtually
+    - attend from home
+
+- synonym: offline
+  examples: |
+    - in-person
+    - classroom
+
+- synonym: hybrid
+  examples: |
+    - both modes
+    - blended
+    - mix of online and offline

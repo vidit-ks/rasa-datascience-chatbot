@@ -20,6 +20,7 @@ intents:
   - ask_budget
   - ask_practice
   - deny
+  - inform_course_level
 
 entities:
   - course
@@ -33,6 +34,13 @@ entities:
   - budget
 
 slots:
+  course_level:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: course_level
+
   course:
     type: text
     mappings:
@@ -44,62 +52,126 @@ slots:
     mappings:
       - type: from_entity
         entity: duration
-  
-  level:
+
+  budget:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
-        entity: course_level
+        entity: budget
+
+  mode:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: mode
+
 
 responses:
   utter_greet:
-    - text: "Hello 👋! How can I assist you with our Data Science offerings today?"
-
-  utter_course_info:
-     - text: "Our Data Science course includes Python, ML, DL, NLP, and hands‑on projects."
-
-  utter_fees:
-    - text: "The fee structure for {course} is ₹50,000. We offer scholarships too!"
-
-  utter_eligibility:
-    - text: "Eligibility: Bachelor's degree in any stream, basic coding, and maths."
-
-  utter_admission_process:
-    - text: "Admission process: online form → interview → payment. Need the link?"
-
-  utter_prerequisite:
-    - text: "Prior coding experience in Python and basic stats is recommended."
-
-  utter_placement:
-    - text: "Yes! We offer guaranteed placement assistance with top industry partners."
-
-  utter_contact:
-   - text: "Reach us at +91‑12345‑67890 or email support@example.com"
+    - text: "Hello 👋! I’m your Data Science course assistant. How can I help you today?"
 
   utter_goodbye:
-   - text: "Goodbye! Feel free to ask anytime about our courses."
+    - text: "👋 Goodbye! Come back anytime if you have more questions."
 
   utter_thankyou:
-   - text: "You’re welcome! Happy to help. 🙂"
+    - text: "You're welcome 😊 Let me know if you need anything else."
+
+  utter_course_info:
+    - text: |
+        📘 **Data Science Program Overview**
+        Our course includes:
+        • Python Programming  
+        • Machine Learning (ML)  
+        • Deep Learning (DL)  
+        • Natural Language Processing (NLP)  
+        • Data Visualization  
+        • Real-world Projects & Case Studies
+
+  utter_eligibility:
+    - text: |
+        🎯 **Eligibility Criteria**
+        • Any Bachelor's degree (any stream)  
+        • Basic programming knowledge (preferably Python)  
+        • Comfortable with high-school level math
+
+  utter_prerequisite:
+    - text: |
+        ✅ **Recommended Prerequisites**
+        • Familiarity with Python  
+        • Basic statistics & probability  
+        • Logical thinking skills
+
+  utter_placement:
+    - text: |
+        💼 **Placement Assistance**
+        Yes! We offer:
+        • Resume building  
+        • Mock interviews  
+        • Industry connections  
+        • Job referrals to hiring partners
+
+  utter_contact:
+    - text: |
+        📞 **Contact Support**
+        • Phone: +91-12345-67890  
+        • Email: support@example.com
 
   utter_start_date:
-    - text: "The next Data Science batch begins on [start_date]. Would you like the exact calendar?"
+    - text: |
+        📅 **Next Batch Alert**
+        The upcoming batch starts on **{start_date}**.
 
   utter_mode:
-    - text: "We offer both online and offline modes. Which would you prefer?"
+    - text: |
+        🖥️ We offer:
+        • Online (live + recorded)  
+        • Offline (in select cities)  
+        • Hybrid mode (flexible)
 
   utter_scholarship:
-   - text: "Yes, we offer early‑bird discounts and merit‑based scholarships. Want details?"
+    - text: |
+        🎓 **Scholarships & Offers**
+        • Early-bird discount: up to 15%  
+        • Merit-based scholarship  
+        • Group discounts available too!
 
   utter_topics:
-    - text: "Our course covers Python, ML, DL, NLP, statistics, and real-world projects."
+    - text: |
+        📚 **Topics You'll Master**
+        • Python, Pandas, NumPy  
+        • Machine Learning (supervised & unsupervised)  
+        • Deep Learning (CNNs, RNNs)  
+        • NLP  
+        • Data Visualization  
+        • Model deployment using Flask/Streamlit
 
   utter_budget:
-   - text: "With a budget of {budget}, we can suggest our certificate course. Interested?"
+    - text: |
+        💸 Based on your budget of ₹{budget}, I recommend our **Certificate Program**.
+        It includes:
+        • 8-week hands-on training  
+        • Key ML modules  
+        • 2 real-world projects
 
   utter_practice:
-    - text: "Absolutely! You’ll work on 3+ projects and coding assignments in each module."
+    - text: |
+        🧪 **Hands-on Learning**
+        • 10+ coding assignments  
+        • 3 major capstone projects  
+        • Mini real-world case studies  
+        • Code reviews & feedback
 
+  utter_ask_show_batches:
+    - text: "Would you like to see upcoming batch dates?"
+
+  utter_agree:
+    - text: 
+        "👍 Great! Let me know how else I can help. 
+         Feel free to ask about fees, topics, or placements."
+
+              
 
 actions:
   - action_list_upcoming_batches
@@ -113,7 +185,5 @@ actions:
   - action_provide_admission_link
 
 session_config:
-  session_expiration_time: 60  # in minutes
+  session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
-
